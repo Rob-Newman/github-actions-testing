@@ -29,22 +29,26 @@ version-resolver:
   default: patch
 exclude-labels:
   - 'skip-changelog'
-# autolabeler:
-#   - label: 'chore'
-#     files:
-#       - '*.md'
-#     branch:
-#       - '/docs{0,1}\/.+/'
-#   - label: 'bug'
-#     branch:
-#       - '/fix\/.+/'
-#     title:
-#       - '/fix/i'
-#   - label: 'enhancement'
-#     branch:
-#       - '/feature\/.+/'
-#     body:
-#       - '/JIRA-[0-9]{1,4}/'
+autolabeler:
+  - label: 'docs'
+    files:
+      - '*.md'
+    branch:
+      - '/docs\/.+/'
+  - label: 'bug'
+    branch:
+      - '/fix\/.+/'
+      - '/bugfix\/.+/'
+      - '/hotfix\/.+/'
+  - label: 'feature'
+    branch:
+      - '/feature\/.+/'
+      - '/topic\/.+/'
+      - '/story\/.+/'
+  - label: 'maintenance'
+    branch:
+      - '/chore\/.+/'
+      - '/task\/.+/'
 template: |
   ## Changes
 
