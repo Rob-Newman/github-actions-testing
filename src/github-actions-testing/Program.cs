@@ -8,6 +8,7 @@ namespace ConsoleApp1
         {
             Console.WriteLine("Hello World! How are you?");
             // Pretending to add a bug fix change, adding a second commit to 1 PR
+            // Some mre changes to trigger the action
         }
     }
 }
