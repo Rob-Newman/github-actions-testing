@@ -14,4 +14,5 @@ jobs:
       - uses: matt-ball/newman-action@master
         with:
           collection: newman-tests.postman_collection.json
+          reporters: '["emojitrain"]'
           envVar: '[{ "key": "baseUrl", "value": "https://fakerapi.it/api/v1/" }]'
