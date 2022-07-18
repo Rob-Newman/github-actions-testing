@@ -10,9 +10,14 @@ jobs:
   newman:
     runs-on: ubuntu-latest
     steps:
+    # Install the newman command line utility and also install the html extra reporter
+      - name: Install newman HTML Reporter
+        run: |
+          npm install -g newman-reporter-htmlextra
+    
       - uses: actions/checkout@master
       - uses: matt-ball/newman-action@master
         with:
           collection: newman-tests.postman_collection.json
-          reporters: '["html"]'
+          reporters: '["htmlextra"]'
           envVar: '[{ "key": "baseUrl", "value": "https://fakerapi.it/api/v1/" }]'
