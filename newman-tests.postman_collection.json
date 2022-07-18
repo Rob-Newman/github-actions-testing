@@ -1,0 +1,52 @@
+{
+	"info": {
+		"_postman_id": "bfef8679-9cab-4cd0-9d2c-218ad3d7cc8b",
+		"name": "newman-tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22083266"
+	},
+	"item": [
+		{
+			"name": "text",
+			"item": [
+				{
+					"name": "valid request returns 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", () => {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}texts?_quantity=1&_characters=500",
+							"host": [
+								"{{baseUrl}}texts"
+							],
+							"query": [
+								{
+									"key": "_quantity",
+									"value": "1"
+								},
+								{
+									"key": "_characters",
+									"value": "500"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
