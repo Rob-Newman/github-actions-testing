@@ -1,9 +1,10 @@
 name: Newman Run
 
 on:
-  pull_request:
+  push:
+    # branches to consider in the event; optional, defaults to all
     branches:
-    - master
+      - main
 
 jobs:
   newman:
@@ -11,8 +12,6 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - uses: matt-ball/newman-action@master
-      with:
-        collection: postman_collection.json
-        reporters: '["emojitrain"]'
-        delayRequest: 5000
-        envVar: '[{ "key": "baseUrl", "value": "https://fakerapi.it/api/v1/" }]'
+        with:
+          collection: newman-tests.postman_collection.json
+          envVar: '[{ "key": "baseUrl", "value": "https://fakerapi.it/api/v1/" }]'
