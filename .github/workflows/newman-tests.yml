@@ -1,4 +1,4 @@
-name: Newman Run
+name: Run Newman API Tests
 
 on:
   push:
@@ -37,5 +37,5 @@ jobs:
       - name: Output the run Details
         uses: actions/upload-artifact@v2
         with:
-          name: RunReports
+          name: API Tests Run Reports
           path: testResults
